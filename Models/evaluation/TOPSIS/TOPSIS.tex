@@ -1,0 +1,92 @@
+%%TOPSIS
+%%Technique for Order Preference by Similarity to an Ideal Solution
+%%理想解法 优劣解距离法
+
+
+\subsection{TOPSIS}
+Here is problem of evaluating the water quality of 20 rivers.
+
+\subsubsection{Data set}
+Four indexes have been set and measured in the following table (see in Table \ref{tbl:TOPSIS-water quality data set}).
+%%Data set table
+%%三线表
+\begin{table}[H]
+    \renewcommand\arraystretch{2}   %%控制行间距
+    \centering
+    \begin{tabular}{c r@{.}l r@{.}l r@{.}l c}    %%各列对齐格式设置
+        \toprule  %%表格横线加粗
+        \specialrule{0em}{2pt}{2pt}    %%添加透明线控制行高
+        \textbf{River}& \multicolumn{2}{l}{\textbf{Oxygen content}} & \multicolumn{2}{l}{\textbf{pH}} & \multicolumn{2}{l}{\textbf{Bacteria number}} & \textbf{Plant nutrients} \\
+        \specialrule{0em}{2pt}{2pt}    %%添加透明线控制行高
+        \midrule
+        \specialrule{0em}{1pt}{1pt}
+        1 & 4&69 & 6&59 & 51 & 11&94 \\
+        2 & 2&03 & 7&86 & 19 & 6&46 \\
+        3 & 9&11 & 6&31 & 46 & 8&91 \\
+        4 & 8&61 & 7&05 & 46 & 26&43 \\
+        5 & 7&13 & 6&50 & 50 & 23&57 \\
+        6 & 2&39 & 6&77 & 38 & 24&62 \\
+        7 & 7&69 & 6&79 & 38 & 6&01 \\
+        8 & 9&30 & 6&81 & 27 & 31&57 \\
+        9 & 5&45 & 7&62 & 5 & 18&46 \\
+        10 & 6&19 & 7&27 & 17 & 7&51 \\
+        11 & 7&93 & 7&53 & 9 & 6&52 \\
+        12 & 4&40 & 7&28 & 17 & 25&30 \\
+        13 & 7&46 & 8&24 & 23 & 14&42 \\
+        14 & 2&01 & 5&55 & 47 & 26&31 \\
+        15 & 2&04 & 6&40 & 23 & 17&91 \\
+        16 & 7&73 & 6&14 & 52 & 15&72 \\
+        17 & 6&35 & 7&58 & 25 & 29&46 \\ 
+        18 & 8&29 & 8&41 & 39 & 12&02 \\
+        19 & 3&54 & 7&27 & 54 & 3&16 \\
+        20 & 7&44 & 6&26 & 8 & 28&41 \\
+        \specialrule{0em}{1pt}{1pt}
+        \bottomrule
+    \end{tabular}
+    \caption{TOPSIS-water quality data set.}
+    \label{tbl:TOPSIS-water quality data set}
+\end{table}
+
+
+%%翻译不确定 极大型指标 极小型指标 中间型指标 区间型指标
+\subsubsection{Data conversion}
+In this part, the four indexes should be processed to 'very large index'.
+
+(a)Oxygen content
+High oxygen content indicates better water quality, so this index is a 'very large index', which doesn't need any processing.
+
+(b)pH
+Since the pH of water should be near 7, we have a 'middle index', and the best pH is 7.
+
+To convert a 'middle index' to 'very large index', the following equation is applied here.
+
+\begin{equation*}
+    M = \max {|x_i-x_{best}|} , x_i' = 1 - \frac{|x_i-x_{best}|}{M}
+\end{equation*}
+
+(c)Bacteria number
+The better the water quality is, the fewer the bacteria number should be. So the bacteria number is a 'very little index', which can be converted through the following way.
+
+\begin{equation*}
+    x_i' = max - x_i
+\end{equation*}
+
+(d)Plant nutrient
+The index of the plant nutrient have an appropriate interval between 10 to 20, which should be converted to 'very large index' by using the following way.
+
+In an 'interval index', $[a,b]$ is the stable interval and $[a^*,b^*]$ is the tolerant interval (the min and the max of data).
+
+\begin{equation*}
+    x' = \begin{cases}
+    1 - \frac{a-x}{a-a*}, & x<a ; \\
+    1 &, a \leq x \leq b ; \\
+    1 - \frac{x-b}{b*-b}, & x>b .
+    \end{cases}
+\end{equation*}
+
+\subsubsection{Construct the normalized initial matrix}
+Then the normalized initial matrix can be constructed.
+
+\subsubsection{Construct the index weight by AHP}
+
+\subsubsection{Construct the evaluation system}

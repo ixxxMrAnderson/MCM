@@ -1,0 +1,21 @@
+\begin{abstract}
+
+Nowadays, shipping industry has entered the e-commerce market. Dynamic smart pricing, an important characteristic of traditional e-commerce market, thus become meaningful to shipping companies now. Shipping company X plans to build an intelligent pricing system, and our team is required to provide some insights of the given data and design a pricing strategy to maximize the total revenue. 
+
+As for task 1, we construct an evaluation system on the basis of four indices: \textbf{sales, historical revenue, average freight rate, and port throughput}. We first preprocess the given data and then calculate the four indices of each flow direction. We apply \textbf{Entropy Weight Method} to allocate weights to each index, and then instead of simply making weighted summation, we use \textbf{TOPSIS} to rank all the flow directions. Finally we screen ten valuable flow directions.
+
+In terms of task 2(1), we analyze the booking habits of ten selected flow direction by giving \textbf{a waybill distribution in the selling period}. Because selling period varies in voyages, \textbf{we min-max normalize different selling periods and map all the order time into a general 14-day period.} Furthermore, we find that \textbf{the fluctuation of the freight rate will affect the ordering decision of customers}.
+
+With regard to task 2(2), we find two factors that influence the relationship between freight rate and sales volume: booking habits and market demand. We use \textbf{Grange Cause Test} to find out the lag value of the influence on customers' ordering decision caused by the fluctuation of freight rate, quantitatively showing the influence of booking habits. For the second factor, we define a \textbf{market demand index} to describe the market condition, which is calculated by sales volume of the following days. \textbf{We find that freight rate affects market demand, which will show in the future sales volume.}
+
+In task 2(3), we continue to use the time-varying market demand index in 2(2) as an indicator of market condition and apply \textbf{LSTM neural network} to predict its value. Then we calculate the future sales volume by the predicted results.
+
+For the final task 3, we provide a simple pricing strategy and use \textbf{the ratio of the total revenue produced by the existing strategy and the simple one we propose} to test rationality. We find that the existing strategy of company X has its rationality. Then we provide our own pricing system, where freight rate is linearly changed according to a changing rate, which is multiply influenced by the factors we have discussed above. In this case, we calculate the weights of the influencing factors by \textbf{AHP}. As a result, the changing rate is achieved and the freight rate change can be determined.
+
+Last but not least, we summarize our pricing strategy and present our insights to the project leader of company X for the purpose of helping company X take a lead in the shipping market.
+    
+	\begin{keywords}
+	\vspace{5pt}
+	LSTM; Granger Cause Test; TOPSIS; Entropy Weight Method; AHP.
+	\end{keywords}
+\end{abstract}

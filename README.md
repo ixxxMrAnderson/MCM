@@ -1,0 +1,5 @@
+# MCM 2100585
+
+![Project visual summary](Chapter-2021C/images-2021C/post.png)
+
+I served as the team leader during a four-day competition period, coordinating a small research team to produce a 20-page paper on a real-world research problem: prioritizing Asian giant hornet sighting reports in Washington State and modeling the spread and eradication of the invasive pest. Our methodology combined a Pest Spread Cellular Automata model to simulate geographic spread, FCEM and AHP to evaluate visual similarity and misclassification risk among insects, Logistic Regression to screen report quality, and TOPSIS to rank high-priority sighting reports based on pest emergence probability, seasonal activity, note informativeness, and image-based classification risk. I was primarily responsible for the modeling, coding, technical implementation, and drafting the technical sections of the paper. This was my first time leading a small research team, and our work received a Finalist Award, placing in the top 1% worldwide.

@@ -1,0 +1,31 @@
+\section{Memo to the Project Leader of Shipping Company X}
+\noindent\textbf{Date:} January 29, 2021\\
+\textbf{To:} the project leader, Shipping Company X\\
+\textbf{From:} MCM Team 2100585\\
+\textbf{Subject:} Recommendations for Dynamic Pricing Strategies\\
+\rule[-7pt]{14.3cm}{0.1em}
+
+In recent years, third-party logistics service companies, Internet companies, and liner companies have tried shipping e-commerce platforms to target shipping service resources such as container spaces\parencite{Data}. Our team has analyzed the given data, and conceived a model that can adjust prices in real time to maximize revenue in terms of market demand, customer ordering habits, customer sensitivity to prices, and shipping seasons. The superiority of this model has been well verified based on historical data.
+
+Our model is executed according to the following steps and considers factors in multiple dimensions.
+\begin{enumerate}
+    \item It can choose different price adjustment modes according to the low and peak seasons of shipping.
+    \item Set two thresholds—ceiling threshold and floor threshold. When the influencing parameter reaches the ceiling threshold, it will trigger a price increase operation, when the influencing parameter reaches the ceiling threshold, it will trigger a price reduction operation. When it falls between the two, the price will remain unchanged.The influence parameters are determined according to the following
+    \begin{itemize}
+        \item[-] The amount of lag calculated by the customer’s sensitivity to price fluctuations.
+        \item[-] The market demand index obtained by LSTM short-term prediction from the processed historical data.
+        \item[-] According to the theory of supply and demand, the current cabin space utilization rate is an important basis for determining price adjustment operations.
+    \end{itemize}
+    \item Then rely on the algorithm to determine the most appropriate price adjustment range to maximize revenue.
+\end{enumerate}
+
+Our model has lots of advantages over existing pricing strategies in many aspects.
+\begin{enumerate}
+    \item Compared with the previous strategy, our model takes into account the different sensitivities of customers in different flows to prices.
+    \item Besides, we have not only made short-term forecasts of external market demand, but also reflected its impact on the parameters.
+    \item Moreover, we divide the sales period into smaller time units to make price changes more sensitive to maximize revenue.
+\end{enumerate}
+
+Thanks for your reading!
+
+

@@ -1,0 +1,37 @@
+\section{Assumptions and professional explanation}
+In order to simplify the problem we are studying, we put the designed dynamic pricing system in an ideal environment. Therefore, we set the following bold assumptions：
+\begin{itemize}                %%以圆点方式给出各点
+    \item \textbf{Suppose Company X is in a completely monopolistic market and it is only one supplier.}This is an assumption based on Company requirements.
+    \item \textbf{The cost is not considered in the container revenue, and only the revenue is calculated as an indicator of maximizing revenue.}This is because the cost composition of the container shipping industry is too complicated, and we made this assumption based on the requirements of Company.
+    \item \textbf{Only focus on the containers that are 20 units.} Although there are multiple sizes of containers, we only select the size with a large sample size for analysis, which is a reference for other sizes.
+    \item \textbf{Ignore the impact of the contract market on the spot market sales for now.} Due to container inventory constraints, the sales volume of contract orders will affect the spot market orders. But the scheduled time of the contract order may be a year-round cooperation, we cannot learn or predict, so temporarily ignore this influencing factor.
+\end{itemize}
+
+Due to the particularity of the container industry, we introduce and define some of its symbol names.
+\begin{table}[H]
+    \renewcommand\arraystretch{2}   %%控制行间距
+    \centering
+    \caption{Introduction of Professional words.}
+    \begin{tabular}{lll}    %%三列均左对齐
+        \toprule  %%表格横线加粗
+        \specialrule{0em}{2pt}{2pt}    %%添加透明线控制行高
+        Name & Definition  \\
+        \specialrule{0em}{2pt}{2pt}    %%添加透明线控制行高
+        \midrule
+        \specialrule{0em}{1pt}{1pt}
+        freight rate & the price of one container \\
+        AMT & freight rate\\
+        flow direction & a route that only considers the departure and arrival \\
+        sales volume & the number of completed container orders \\
+        sales & the number of waybills\\
+        throughput & an important indicator for measuring port capacity \\
+        SVVD & unique identifier of the voyage\\
+        ordinary commodities & goods other than special commodities in the spot market\\
+        contract market & market with sustained and stable large-scale freight demand\\
+        spot market & market with unstable demand and low numbers\\
+        \specialrule{0em}{1pt}{1pt}
+        \bottomrule
+    \end{tabular}
+    \label{tbl:Notations}
+\end{table}
+

@@ -1,0 +1,106 @@
+%%附录部分
+\begin{appendices}
+
+%%\lstinputlisting[language=Matlab]{code/gene.m}
+
+
+\begin{lstlisting}[language={python}]
+
+#---------------------------------TOPSIS---------------------------------
+
+import numpy as np
+import pandas as pd
+
+
+def read(file):
+    wb = pd.read_excel(file)
+    wb = wb[['emerging possibility', 'activeness', 'note effectiveness', 'possibility of misclassification']]
+    return np.array(wb).transpose()
+
+
+# min -> max
+def min2max(data):
+    return np.max(data)-data
+
+
+# mid -> max
+def mid2max(data, x_best):
+    tmp_data = data - x_best
+    M = np.max(abs(tmp_data))
+    data = 1 - abs(data - x_best) / M
+    return data
+
+
+# interval -> max
+def section2max(data, x_min, x_max):
+    M = max(x_min - np.min(data), np.max(data) - x_max)
+    answer_list = []
+    for i in data:
+        if i < x_min:
+            answer_list.append(1 - (x_min-i) / M)
+        elif x_min <= i <= x_max:
+            answer_list.append(1)
+        else:
+            answer_list.append(1 - (i - x_max) / M)
+    return np.array(answer_list)   
+
+
+# standardization
+def standardization(data):
+    K = np.power(np.sum(pow(data, 2), axis=1), 0.5)
+    for i in range(0, K.size):
+        for j in range(0, data[i].size):
+            data[i, j] = data[i, j] / K[i]
+    return data
+
+
+# normalize the score
+def normalization(data):
+    list_max = []
+    list_min = []
+    for i in range(data.shape[0]):
+        list_max.append(np.max(data[i, :]))
+        list_min.append(np.min(data[i, :]))
+    list_max = np.array(list_max)
+    list_min = np.array(list_min)
+    max_list = []
+    min_list = []
+    answer_list = []
+    for k in range(data.shape[1]):
+        max_sum = 0
+        min_sum = 0
+        for q in range(data.shape[0]):
+            max_sum += np.power(data[q, k]-list_max[q], 2)
+            min_sum += np.power(data[q, k]-list_min[q], 2)
+        max_list.append(pow(max_sum, 0.5))
+        min_list.append(pow(min_sum, 0.5))
+        answer_list.append(min_list[k] / (min_list[k] + max_list[k]))
+    answer = np.array(answer_list)
+    return answer / np.sum(answer)
+
+
+if __name__ == "__main__":
+    file = 'top.xlsx'
+    raw_data = read(file)
+    print(raw_data)
+    data = []
+    for i in range(len(raw_data)):
+        # if i == 0:     # max
+        tmp = raw_data[i]
+        # elif i == 1:   # mid
+        #     mid_ = 7
+        #     tmp = mid2max(raw_data[i], mid_)
+        # elif i == 2:   # min
+        #     tmp = min2max(raw_data[i])
+        # else:          # interval
+        #     min_ = 10
+        #     max_ = 20
+        #     tmp = section2max(raw_data[i], min_, max_)
+        data.append(tmp)
+
+    data_st = standardization(np.array(data))
+    data_nor = normalization(data_st)
+    pd.DataFrame(data_nor).to_csv('TOPSIS_output.csv', encoding='utf -8_sig')
+\end{lstlisting}
+
+\end{appendices}

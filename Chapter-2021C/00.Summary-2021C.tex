@@ -1,0 +1,22 @@
+\begin{abstract}
+\indent 
+
+Asian giant hornets, also called Vespa mandarinia, have been discovered in Washington State, which have caused quite a commotion. Lots of people have reported their witness of these hornets with different usefulness. Our team have received these reports and are required to provide our insight of the given report and design a prioritizing system for Washington State to select those reports that are significant.
+
+As for task 1, we study the living habits of the pest and apply \textbf{PS-CA (Pest Spread-Cellular Automata)} to simulate its spread. In our simulation,\textbf{ seasonal reproduction of the pests is considered and the growth of the pests in a certain period biologically conforms to the J-curve}, adding the rationality of our model. Our simulation results not only achieve the precision of a $150m \times 150m$ area but also have a great match with those positive detection among the provided data.
+
+In terms of task 2, we first process the negative reports and find out several insects that are most frequently occurring in the database. We evaluate the similarity between the insect sample and the pest by \textbf{FCEM (Fuzzy Comprehensive Evaluation Method)} and determine the weight by \textbf{AHP (Analytic Hierarchy Process).} We study and vividly \textbf{draw ten of these insects to show their features}, which are also the factors of the evaluation system. It turns out that Eastern cicada killer, European hornet, and horn tail are the three types that are most similar to the pest.
+
+In task 3, we design our own report prioritization system. There are two steps in this system: data screening and report prioritization. In data screening, we judge the quality of the picture and use \textbf{Logistic Regression} to calculate the informative score of the note. The reports that performs bad in this step will be ranked last on the final list of reports. In report prioritization, we apply \textbf{TOPSIS (Technique for Order Preference by Similarity to an Ideal Solution)} to rank remaining reports. We comprehensively consider the indices of our prioritization model: \textbf{Emerging Possibility of the Pest by our PS-CA model}, \textbf{Activeness of the Pest by time}, \textbf{Note Effectivenes}, and \textbf{Possibility of mistaken classification by image recognition}.
+
+In order to improve the robustness of our model, we optimize the PS-CA model by \textbf{adding new starting points} or \textbf{deleting existing points} according to new positive reports or nest destruction as well as \textbf{adjusting its pest growth curve every year}. We define \textbf{a new index with three levels to determine the degree of eradication} and use it to test the sensitivity of $\lambda$, which can reflect the strength of human intervention. 
+
+To summarize, our results advice Washington State Department of Agriculture that \textbf{human intervention is necessary} to prevent the pest spread and \textbf{more efforts and resources} are needed for a thorough eradication.
+
+% Last but not least, we summarize our results for Washington State Department of Agriculture that \textbf{human intervention is necessary} to prevent the pest spread and \textbf{more efforts and resources are needed} for a thorough eradication.
+     
+	\begin{keywords}
+	\vspace{5pt}
+	Cellular automata; Fuzzy comprehensive evaluating method; TOPSIS; logistic regression; AHP; Propagation simulation.
+	\end{keywords}
+\end{abstract}

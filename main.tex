@@ -1,0 +1,120 @@
+\documentclass{mcmthesis}
+\mcmsetup{CTeX = false,   % 使用 CTeX 套装时，设置为 true
+        tcn = 2100585, problem = C,
+        sheet = true, titleinsheet = true, keywordsinsheet = true,
+        titlepage = false}
+\usepackage{palatino}        %comap杂志的字体
+\usepackage{mwe}             %
+\usepackage{graphicx}        %插入图片
+\usepackage{subfigure}       %用于插入多张图片
+%\usepackage{subcaption}      %用于插入图片会报错
+\usepackage{booktabs}        %用于画三线表
+\usepackage{float}           %不让latex自动安排图片位置
+\usepackage{multirow}        %用于画表格
+\usepackage{indentfirst}     %首行缩进
+\usepackage[sorting=none]{biblatex}  
+\usepackage{url}   %网页引用所需
+\addbibresource{Chapter-2021C/reference-2021C.bib}  %引用参考文献所需
+\usepackage[ruled,lined,commentsnumbered]{algorithm2e}
+\usepackage{geometry}        %页面设置
+\usepackage{amsmath}
+\usepackage{mathtools}
+%\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm} %%页边距，若对左右边距进行修改，请保证左右边距一样，并且将mcmthesis.cls第81行对应的margin参数设置为相同数值
+
+\title{
+\textbf{Catch the Pest: A Comprehensive Prioritization System based on Spread Simulation}
+}          %%文章标题
+\begin{document}
+\linespread{0.6}                          %%行间距
+\setlength{\parskip}{0.5\baselineskip}    %%段间距
+\input{Chapter-2021C/00.Summary-2021C}
+% \input{Chapter-Mock/00.Summary-Mock}
+\maketitle                               % 生成sheet页
+\thispagestyle{empty}                    % 不要页眉页脚和页码
+
+\newpage
+\tableofcontents   %%生成目录
+%\thispagestyle{empty}   % 不要页眉页脚和页码
+
+\newpage
+\setcounter{page}{1}
+
+\input{Chapter-2021C/01.Introduction-2021C}
+
+\input{Chapter-2021C/Task1}
+
+\input{Chapter-2021C/Task2}
+
+\input{Chapter-2021C/Task3}
+
+\input{Chapter-2021C/Task4,5}
+
+\input{Chapter-2021C/Conclusion}
+
+\input{Chapter-2021C/Strengths and Weaknesses}
+
+\newpage
+\input{Chapter-2021C/Memo}
+
+\newpage
+%%参考文献
+% \bibliographystyle{unsrt}
+% \bibliography{reference}
+\addcontentsline{toc}{section}{References}
+\nocite{*} %排版bib文件中所有文献
+\printbibliography
+
+
+%%附录部分
+\input{Chapter-2021C/Appendices}
+
+%%Mock
+% \input{Chapter-Mock/01.Introduction-Mock}
+
+% \input{Chapter-Mock/02.Assumption}
+
+% \input{Chapter-Mock/Task1}
+
+% \input{Chapter-Mock/Task2}
+
+% \input{Chapter-Mock/Task3}
+
+% \input{Chapter-Mock/Conclusion-Mock}
+
+% \input{Chapter-Mock/Strengths and weaknesses-Mock}
+
+% \newpage
+% \input{Chapter-Mock/memo}
+% \newpage
+
+% %%参考文献
+% \addcontentsline{toc}{section}{References}  %使目录中出现reference
+% \nocite{*} %排版bib文件中所有文献
+% \printbibliography
+
+% %%附录部分
+% \input{Chapter-Mock/Appendices-Mock}
+
+%%Test
+% %%结束了删掉
+% \newpage
+% \section{Evaluation}
+% \input{Models/evaluation/AHP/AHP}
+% \input{Models/evaluation/PCA/PCA}
+% \input{Models/evaluation/TOPSIS/TOPSIS}
+
+% \newpage
+% \section{Correlation analysis}
+
+% \newpage
+% \section{Clustering analysis}
+% \input{Models/clustering analysis/LR/LR}
+
+% \newpage
+% \section{Prediction}
+% \input{Models/prediction/GM/GM}
+
+% \newpage
+% \input{Test/Test-formula/Test-formula}
+
+\end{document}

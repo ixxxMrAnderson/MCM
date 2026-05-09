@@ -1,0 +1,88 @@
+%%模型
+\section{The Models}
+%伪代码
+\begin{algorithm}[H]
+\caption{Standardization of selling period and freight rate}
+\KwIn{all the waybill date and }
+\KwOut{how to write algorithm with \LaTeX2e }
+initialization\;
+\While{not at end of this document}{
+    read current\;
+    \eIf{understand}{
+        go to next section\;
+        current section becomes this one\;
+    }{
+        go back to the beginning of current section\;
+    }
+}
+\end{algorithm}
+
+\subsection{Model 1}
+\subsubsection{Detail 1 about Model 1}
+The detail can be described by equation \eqref{eq:heat}:
+\begin{equation}\label{eq:heat}
+\frac{\partial u}{\partial t} - a^2 \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} \right) = f(x, y, z, t)
+\end{equation}
+
+\subsection{Model 2}
+The results are shown in Figure, where $t$ denotes the time in seconds, and $c$ refers to the concentration of water in the boiler.
+
+%%单张图片插入
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{111.png}
+    \caption{pic1}
+    \label{big}
+\end{figure}
+
+%%并排多张图片插入
+\begin{figure}[H]
+    \centering
+    \subfigure[pic1.]{
+    \includegraphics[width=5.5cm]{images/111.png}
+    \label{small1}
+    }
+    \quad
+    \subfigure[pic2.]{
+    \includegraphics[width=5.5cm]{images/111.png}
+    \label{small2}
+    }
+    \quad
+    \subfigure[pic3.]{
+    \includegraphics[width=5.5cm]{images/111.png}
+    \label{small3}
+    }
+    \quad
+    \subfigure[pic4.]{
+    \includegraphics[width=5.5cm]{images/111.png}
+    \label{small4}
+    }
+    \caption{ pics}
+\end{figure}
+
+%并排插图多张图片
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=1.7in]{images/3.jpg}
+        \caption{iu1.}
+        \label{fig:iu1}
+    \end{subfigure}
+    \hfill  %%可以使同行图片均匀分布
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=1.8in]{images/4.jpg}
+        \caption{iu2.}
+        \label{fig:iu2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=1.8in]{images/5.jpg}
+        \caption{iu3.}
+        \label{fig:iu3}
+    \end{subfigure}
+    \caption{Three figures.}
+    \label{fig:Three figures}
+\end{figure}
